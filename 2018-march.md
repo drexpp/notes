@@ -15,4 +15,5 @@ Tech
    
 
 - Use of **`this`** [You don't know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md)
-   - `This` does not, in any way, refer to a function's lexical scope. If you create variable `a` within a function, you can't call `a` within another function with the use of `this`.
+   - `This` does not, in any way, refer to a function's lexical scope. If you create variable `a` within a function, you can't call `a` within another function with the use of `this`
+   - In JavaScript the value of `this` is determined mostly by the invocation context of function
