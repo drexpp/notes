@@ -20,4 +20,4 @@ Tech
    - If strict mode is in effect (inside the function where `this` is used), the global object is not eligible for the default binding, so the this is instead set to undefined
    - They both take, as their first parameter, an object to use for the this, and then invoke the function with that this specified. Since you are directly stating what you want the this to be, we call it explicit binding.
    Hard binding will work in any case: We create a function bar() which, internally, manually calls foo.call(obj), thereby forcibly invoking foo with obj binding for this. No matter how you later invoke the function bar, it will always manually invoke foo with obj
-   - 
+   - var bar = foo.bind( obj ); or call( obj) for instace will do the trick.
