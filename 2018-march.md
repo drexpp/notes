@@ -14,4 +14,4 @@ Tech
    - Const: Protect variables from being overwritten, `const` and `let` are block-scoped. `Const` allows mutability if the object or data structure is mutable (for example `Array`)
    
 
-- Use of ### `this`
+- Use of **`this`**
