@@ -24,5 +24,7 @@ Tech
 
 ### Node.js
 
-* Use of require in Node.js *
-   - Require acts like a javascript library, adding a set of functions that you can include in your application
+* Use of **require()** in Node.js
+   - Require acts like a javascript library, adding a set of functions that you can include in your application. Works as an import in other languages.
+   
+   
