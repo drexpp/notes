@@ -29,6 +29,11 @@ Tech
 
 
 ### Vim
+* Indexing
    - If you don't know how many lines in advance (it may be quite large), you can use ranges. Go to the first line of the range and enter **`ma`** to place marker A. Then go to the last line and enter **`>'a`** to indent from here to marker
+   - Alternatively, if you know that you want to adjust three lines, you can simply: Type 3>> to shift right or 3<< to shift left OR
+   Type >2j to shift right or <2j to shift left.
+* Folding
+   - Press **`zf`** to fold, and **`zo`** to open. You can also add **`zf3j`** to fold the next 3 lines including the actual one.
    
    
