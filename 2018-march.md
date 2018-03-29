@@ -26,5 +26,9 @@ Tech
 
 * Use of **require()** in Node.js
    - Require acts like a javascript library, adding a set of functions that you can include in your application. Works as an import in other languages.
+
+
+### Vim
+   - If you don't know how many lines in advance (it may be quite large), you can use ranges. Go to the first line of the range and enter **`ma`** to place marker A. Then go to the last line and enter **`>'a`** to indent from here to marker
    
    
