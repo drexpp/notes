@@ -35,4 +35,4 @@ Tech
    Type >2j to shift right or <2j to shift left.
 * Folding
    - Press **`zf`** to fold, and **`zo`** to open. You can also add **`zf3j`** to fold the next 3 lines including the actual one.
-   - Ctrl+Q entra en el modo visual de vim. Con :, una vez seleccionado el trozo de código, podremos escribir `sort` y quedarán las líneas ordenadas.
+   - Ctrl+Q you enter in Vim's visual mode. Using :, once you have selected your piece of code, we can write `sort` and the lines selected with the visual block will be sorted.
