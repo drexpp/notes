@@ -9,8 +9,8 @@ Tech
 * Tabs
      - Opening a new tab using `:tabe`
      - Stablishing some keys for jumping to the next and previous tab using:
-          - nnoremap <F3>  :tabprev<CR>
-          - nnoremap <F4>  :tabnext<CR>
+          - nnoremap `<F3>`  :tabprev`<CR>`
+          - nnoremap `<F4>`  :tabnext`<CR>`
 * Opening file and exploring
     - Using `:Ex` for exploring `pwd` directory.
     - gg go to start of file
