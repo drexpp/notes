@@ -38,8 +38,8 @@ console.log(xyz.next().value);
  
   ```
 function* getStockPrice(name) {
-  var symbol = yield getStockSymbol(name);
-  var price = yield getStockPrice(symbol);
+  let symbol = yield getStockSymbol(name);
+  let price = yield getStockPrice(symbol);
   return price;
 }
 
@@ -48,5 +48,15 @@ spawn(getStockPrice("Apple")).
   then(
     price => console.log(price),
     error => console.log(error));
+  ```
+  ```
+  async function getStockPrice(name){
+      let symbol = await getStockSymbol(name);
+      let price = await getStockPrice(symbol);
+      return price;
+  }
+  
+  let result = getStockPrice("Apple");
+  result.then(console.log, console.error);
   ```
   
