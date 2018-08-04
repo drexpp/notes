@@ -34,6 +34,8 @@ console.log(xyz.next().value);
 // expected output: 20
   ```
   
+ Task.js library is cool for things like this and spawn function
+ 
   ```
 function* getStockPrice(name) {
   var symbol = yield getStockSymbol(name);
