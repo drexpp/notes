@@ -34,3 +34,16 @@ console.log(xyz.next().value);
 // expected output: 20
   ```
   
+  ```
+function* getStockPrice(name) {
+  var symbol = yield getStockSymbol(name);
+  var price = yield getStockPrice(symbol);
+  return price;
+}
+
+spawn(getStockPrice("Apple")).
+  then(
+    price => console.log(price),
+    error => console.log(error));
+  ```
+  
