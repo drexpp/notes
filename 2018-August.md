@@ -17,7 +17,7 @@ Tech
   - `for (const item in items){}` Access indexes like 0,1,2,...
   - Iterator pattern: `let iterator = [42, 39][@@iterator]();` Then it can be called like `iterator.next();`. This is the syntactic sugar behind `for..of` loop
   
-   #### [Function generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) (Return multiple values)
+   #### [Function generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) (Return multiple values, this is prior to async/await)
    
  ```
 function* test(i) {
