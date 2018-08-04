@@ -41,6 +41,7 @@ function* getStockPrice(name) {
   return price;
 }
 
+//Spawn returns a promise ofc
 spawn(getStockPrice("Apple")).
   then(
     price => console.log(price),
