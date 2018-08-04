@@ -61,7 +61,7 @@ spawn(getStockPrice("Apple")).
   ```
   
   #### [Observer pattern](https://youtu.be/DqMFX91ToLw?t=38m07s) (Iterates, finish and return errors everything in a controlled way)
-  First option
+  First option (Implementation in video)
   
   ```
   nums().observer({
@@ -90,4 +90,14 @@ spawn(getStockPrice("Apple")).
     } catch(e) { console.error(e); }
     console.log("done");
   })();
+  ```
+  
+  #### Using async with on
+  
+  ``` 
+  async function printSpikes(){
+    for(var spike on getPriceSpikes("Apple", 3.15){
+      console.log(priceSpike);
+    }
+  }();
   ```
