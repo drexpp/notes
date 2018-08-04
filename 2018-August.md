@@ -60,3 +60,34 @@ spawn(getStockPrice("Apple")).
   result.then(console.log, console.error);
   ```
   
+  #### [Observer pattern](https://youtu.be/DqMFX91ToLw?t=38m07s) (Iterates, finish and return errors everything in a controlled way)
+  First option
+  
+  ```
+  nums().observer({
+    next(v) { console.log(v); },
+    return(v) { console.log("done: " + v); },
+    throw(e) { console.error(e); }
+  });
+  ```
+  
+  Second option
+  
+  ```
+  nums().forEach(v => console.log(v)).
+    then( v => console.log(`done: {v}`),
+          e => console.error(e));
+  ```
+  
+  Third option
+  
+  ```
+  (async function writeNums(){
+    try{
+      for(let v on nums()){
+        console.log(v);  
+      }
+    } catch(e) { console.error(e); }
+    console.log("done");
+  })();
+  ```
