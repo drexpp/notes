@@ -7,9 +7,7 @@ Tech
 
 ### Javascript
 
-  - Holy grail of how V8 works internally with tips (video below)
- 
-  [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/EhpmNyR2Za0/0.jpg)](https://www.youtube.com/watch?v=EhpmNyR2Za0)
+  - Holy grail of how V8 works internally with tips [(video)](https://www.youtube.com/watch?v=EhpmNyR2Za0) 
   
   #### [Iterations](https://youtu.be/DqMFX91ToLw?t=22m23s)
   
