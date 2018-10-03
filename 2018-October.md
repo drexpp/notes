@@ -34,4 +34,4 @@ Tech
       return sentence.toString();
     }
 ```
-    
+
