@@ -75,7 +75,6 @@ Tech
                     return False
 
             dictChars1 = {}
-            dictChars2 = {}
 
             for c in str1:
                     if c in dictChars1:
@@ -96,7 +95,7 @@ Tech
     isPermutation('abcdexe', 'gdcabex')                                
     ```
     
-    - 1.3 - Write a method to replace all spaces in a string with '%20'.
+  - 1.3 - Write a method to replace all spaces in a string with '%20'.
     ```
     import string
 
@@ -107,7 +106,7 @@ Tech
     Urlify('hello world hehe   ', 16)                                         
     ```
     
-    - 1.4 - Given a string, write a function to check if it is a permutation of a palindrome
+  - 1.4 - Given a string, write a function to check if it is a permutation of a palindrome
     
     ```
     # Time complexity O(n)
@@ -124,10 +123,7 @@ Tech
                             dictWordsCount[c] = 1
                             if c != ' ':
                                     count += 1
-            print(count <= 1)
             return count <= 1
-
-
-
+            
     checkIfPermIsPalindrome('tact coa')
     ```
