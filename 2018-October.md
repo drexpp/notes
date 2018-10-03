@@ -17,5 +17,5 @@ Tech
     
     - dynamic: Has to be decided in run time
     
-   ![dynamic](https://i.imgur.com/HT3JMFu.png =250x250)
+   ![dynamic](https://i.imgur.com/HT3JMFu.png)
     
