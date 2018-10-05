@@ -57,12 +57,12 @@ Tech
     - Second approach (bitwise)
      ```
      def isUniqueCharsBitwise(str):
-      checker = 0
+      iChecker = 0
       for c in str:
-          val = ord(c) - ord('a')
-          if (checker & (1 << val)) > 0:
+          iVal = ord(c) - ord('a')
+          if (iChecker & (1 << iVal)) > 0:
               return False
-          checker |= (1 << val)
+          iChecker |= (1 << iVal)
       return True
 
 
@@ -127,18 +127,18 @@ Tech
     # Time complexity O(n)
     def checkIfPermIsPalindrome(str):
             dictWordsCount = {}
-            count = 0
+            iCount = 0
 
             for c in str:
                     if c in dictWordsCount:
                             dictWordsCount[c] += 1     
                             if dictWordsCount[c] % 2 == 0:
-                                    count -= 1
+                                    iCount -= 1
                     else:
                             dictWordsCount[c] = 1
                             if c != ' ':
-                                    count += 1
-            return count <= 1
+                                    iCount += 1
+            return iCount <= 1
             
     checkIfPermIsPalindrome('tact coa')
     ```
