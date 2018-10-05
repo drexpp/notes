@@ -37,22 +37,37 @@ Tech
 
   - 1.1 - Implement an algorithm to determine if a string has all unique characters
   
-  ```
-  def isUniqueChars(str):
-        if(len(str) > 128):
-                return False
+    - First approach
+      ```
+      def isUniqueChars(str):
+            if(len(str) > 128):
+                    return False
 
-        arrChars = []
-        for c in str:
-                if c in arrChars:
-                        return False
-                else:
-                         arrChars.append(c)
-        return True
+            arrChars = []
+            for c in str:
+                    if c in arrChars:
+                            return False
+                    else:
+                             arrChars.append(c)
+            return True
 
 
-  isUniqueChars('abcdefghijm')
-  ```
+      isUniqueChars('abcdefghijm')
+      ```
+    - Second approach (bitwise)
+     ```
+     def isUniqueCharsBitwise(str):
+      checker = 0
+      for c in str:
+          val = ord(c) - ord('a')
+          if (checker & (1 << val)) > 0:
+              return False
+          checker |= (1 << val)
+      return True
+
+
+     isUniqueCharsBitwise('abcdegf')
+     ```
   
   - 1.2 - Given two strings, write a method to decide if one is a permutation of the other
   
