@@ -95,7 +95,7 @@ spawn(getStockPrice("Apple")).
   ``` 
   async function printSpikes(){
     for(var spike on getPriceSpikes("Apple", 3.15){
-      console.log(priceSpike);
+      console.log(spike);
     }
   }();
   ```
