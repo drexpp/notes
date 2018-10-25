@@ -163,3 +163,22 @@ Tech
       arrVal = [1, 3, 4, 5, 8, 9, 12, 15, 16, 20, 21]
       binarySearch(arrVal, 15, 0, len(arrVal)-1)
       ```
+      
+      
+  ### Node.js
+  
+  - A queue maintain tasks given by clients, this queue communicates with a distpacher in order not to let clients connect to the dispatcher directly, that could cause running out of node workers, then the dispatcher passes back to clients the completed tasks.
+  
+  - Notifying your Node-based HTTP server of network connections to your local hardware is handled by the OS passing along, via libuv, network interface events.
+  
+  - A closure is a function having access to the parent scope, even after the parent function has closed. It would be used when you want to set a local variable inside a function (You cannot use global scope), but you also just want to instantiate once that variable and later on update it when calling a function without triggering the variable to be again the instantiated value.
+```
+var add = (function () {
+    var counter = 0;
+    return function () {counter += 1; return counter}
+})();
+
+add();
+add();
+add(); //Counter returned will be 3
+```
