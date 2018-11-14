@@ -26,19 +26,25 @@ x := 2
 // no new variables on left side of :=
 ```
 
-  - Import used to import dependencies and standards go libraries.]
- ```
-package main
+  - Function declaration
+```  
+func log(message string) {
 
-import (
-  "fmt"
-  "os"
-)
-
-func main() {
-  if len(os.Args) != 2 {
-    os.Exit(1)
-  }
-  fmt.Println("It's over", os.Args[1])
 }
- ```
+
+func add(a int, b int) int {
+
+}
+
+func power(name string) (int, bool) {
+
+}
+
+_, exists := power("goku")
+value, exists := power("goku")
+
+//Short way if parameters are from same type
+func add(a, b int) int {
+
+}
+```
