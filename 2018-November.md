@@ -383,3 +383,99 @@ func add(a, b int) int {
         }
       }
       ```
+      
+### Numpy
+
+  - Arrays
+    - The central feature of NumPy is the array object class. Arrays are similar to lists in Python,
+except that every element of an array must be of the same type
+
+      Creating a simple array
+      
+        ```
+        a = np.array([1, 2, 3, 4], float)
+        ```
+	   
+	    You can use slices just as in python notation, it excludes right term.
+      
+        ```
+        a[:2]   returns array([1., 2.])
+        a[:]    returns array([1., 2., 3., 4.])
+        a[::-1] returns array([4., 3., 2., 1.])
+        ```
+        
+  - Arrays can be multidimensional, **different axes are accessed using commas inside bracket notation**.
+  
+    ```
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    
+    a.shape     returns (2, 3), meaning 2 rows, 3 colums
+    a.dtype     returns the type of values stored in the array, dtype('float64'), double-precision (8-byte) real number
+    
+    a[0, 0]     here is trying to access array index 0, position 0, returning 1.0
+    a[1, 2]     array index 1, position 2, returning 6.0
+    ```
+    
+    Slicing still works 
+    
+    ```
+    a[:, :]     take all rows and take all columns, returns array([[1., 2., 3.], [4., 5., 6.]])
+    
+    Remember a.shape => (2, 3)
+    
+    a[:, :-1]   take all rows, and take from column start to length_columns(3) - 1 = 2, equivalent a[0:2, 0:2] returns array([[1., 2.],
+       [4., 5.]])
+      
+    a[:-1, :-2] take, length_rows(2) - 1 = 1, and length_columns(3) - 2 = 1, same as a[0:1, 0:1] returns array([[1.]])
+    ```
+    
+    - Useful utilities
+    
+      - Length
+        ```
+        len(a)    returns the length of the first axis, rows = 2.
+        ```
+        
+      - Testing if a value is present
+        ```
+        2 in a    returns True
+        0 in a    returns False
+        ```
+        
+      - Reshape, arrays can be reshaped using tuples that specify new dimensions. Reshape creates a new array and does not modify the original array 
+        ```
+        a = np.array(range(10), float)    returns array([ 0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
+        a = a.reshape((5, 2))             returns array([[ 0., 1.], [ 2., 3.],[ 4., 5.],[ 6., 7.],[ 8., 9.]])
+        a.shape                           returns (5, 2)
+        ```
+        
+      - Copy function, it can be used to create a new, separate copy of an array in memory if needed
+      ```
+       a = np.array([1, 2, 3], float)
+       b = a                                They are the same, they just reference to the same memory address
+       c = a.copy()                         c is a new copy of a but in different memory address which means they are independent
+       
+       a[0] = 0                             a and b will be equal, array([0., 2., 3.]) but c will keep its values as array([1., 2., 3.])
+      ```
+  
+      - List can also be created from arrays
+        ```
+        a.tolist()                            returns [1.0, 2.0, 3.0]
+        list(a)                               returns [1.0, 2.0, 3.0]
+        ```
+    
+      - One can convert arrays to binary strings (non-human readable) using tostring(), this function allow arrays to be reconverted from raw data later on. It is convenient for saving large amount of array data in files.
+        ```
+        a = array([1, 2, 3], float)
+        s = a.tostring()                returns '\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x08@'
+        np.fromstring(s)                returns array([1., 2., 3.])
+        ```
+        
+      
+      
+    
+    
+    
+    
+    
+    
