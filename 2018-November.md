@@ -4,51 +4,6 @@ November 2018
 Tech
 ----
 
-
-### Go
-
-  - Assign variables
-```
-// First option
-var e int
-e = 10
-// e = 10
-
-//Second option, in this case go infers the type of the variable
-x := 3
-x = 4
-// x = 4
-
-//This will print error
-x := 1
-x := 2
-// COMPILER ERROR:
-// no new variables on left side of :=
-```
-
-  - Function declaration
-```  
-func log(message string) {
-
-}
-
-func add(a int, b int) int {
-
-}
-
-func power(name string) (int, bool) {
-
-}
-
-_, exists := power("goku")
-value, exists := power("goku")
-
-//Short way if parameters are from same type
-func add(a, b int) int {
-
-}
-```
-
 ### GraphQL
   - Introduction
     - Applications nowadays have the need to fetch data from a server where that data is stored in a database. It’s the responsibility of the API to provide an interface to the stored data that fits an application’s needs.
@@ -383,6 +338,7 @@ func add(a, b int) int {
         }
       }
       ```
+ 	  
       
 ### Numpy
 
@@ -450,13 +406,13 @@ except that every element of an array must be of the same type
         ```
         
       - Copy function, it can be used to create a new, separate copy of an array in memory if needed
-      ```
-       a = np.array([1, 2, 3], float)
-       b = a                                They are the same, they just reference to the same memory address
-       c = a.copy()                         c is a new copy of a but in different memory address which means they are independent
-       
-       a[0] = 0                             a and b will be equal, array([0., 2., 3.]) but c will keep its values as array([1., 2., 3.])
-      ```
+      	```
+        a = np.array([1, 2, 3], float)
+        b = a                                They are the same, they just reference to the same memory address
+        c = a.copy()                         c is a new copy of a but in different memory address which means they are independent
+
+        a[0] = 0                             a and b will be equal, array([0., 2., 3.]) but c will keep its values as array([1., 2., 3.])
+      	```
   
       - List can also be created from arrays
         ```
@@ -476,6 +432,51 @@ except that every element of an array must be of the same type
     
     
     
+### Go
+
+  - Assign variables
+	```
+	First option
+	
+	var e int
+	e = 10				results in e = 10
+
+
+	Second option, in this case go infers the type of the variable
+	
+	x := 3
+	x = 4				results in x = 4
+
+
+	This will cause an error	results in error message => COMPILER ERROR: no new variables on left side of :=
+	x := 1
+	x := 2
+	```
+
+  - Function declaration
+	```  
+	func log(message string) {
+
+	}
+
+	func add(a int, b int) int {
+
+	}
+
+	func power(name string) (int, bool) {
+
+	}
+
+	_, exists := power("goku")
+	value, exists := power("goku")
+
+
+	Short way if parameters are from same type
+	
+	func add(a, b int) int {
+
+	}
+	```
     
     
     
