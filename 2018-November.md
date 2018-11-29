@@ -72,7 +72,7 @@ func add(a, b int) int {
         ```
       - INTERFACE
       
-      In GraphQL an interface is a list of fields. A GraphQL type must have the same fields as all the interfaces it implements and all interface fields must be of the same type.
+      In GraphQL an interface is a list of fields. A GraphQL type must have the same fields as all the interfaces it implements and all interface fields must be of the same type. Interfaces are useful to represent elements that might be of several types. [More information](https://docs.aws.amazon.com/appsync/latest/devguide/interfaces-and-unions.html)
       
       ```
       interface Item {
@@ -155,6 +155,18 @@ func add(a, b int) int {
       {
         allPersons(last: 2) {
           name
+        }
+      }
+      ```
+      Another example
+      
+      ```
+      query {
+        author(id: "abc") {
+          posts {
+            title
+            content
+          }
         }
       }
       ```
@@ -255,4 +267,119 @@ func add(a, b int) int {
     }
     ```
     
- 
+  - **Client**
+  
+    Infrastructure features that you probably want to have in your app:
+    
+    - **Directly sending queries and mutations without constructing HTTP requests**: When you previously used plain HTTP (like fetch in Javascript or NSURLSession on iOS) to load data from an API, all you need to do with GraphQL is write a query where you declare your data requirements and let the system take care of sending the request and handling the response for you. This is precisely what a GraphQL client will do.
+    
+    - **View Layer Integrations & UI updates**: Once the server response was received and handled by the GraphQL client, the requested data somehow needs to end up in your UI. Depending on the platforms and frameworks you’re developing with such as React or Vue.
+    
+    - **Caching Query Results**: GraphQL approach is to normalize the data beforehand. That means that the (potentially nested) query result gets flattened and the store will only contain individual records that can be referenced with a globally unique ID.
+    
+    - **Build-time Schema Validation**: When the build environment has access to the schema, it can essentially parse all the GraphQL code that’s located in the project and compare it against the information from the schema. This catches typos and other errors before an application gets into the hands of actual users.
+    
+    
+  - **Server**:
+    GraphQL implements resolvers to get the result of the query associated with each type (of the query), for example take this query
+    
+    - First let's define a Schema
+    
+      ```
+      type Query {
+        author(id: ID!): Author
+      }
+
+      type Author {
+        posts: [Post]
+      }
+
+      type Post {
+        title: String
+        content: String
+      }
+      ```
+    - Build a query
+    
+      ```
+      query {
+        author(id: "abc") {
+          posts {
+            title
+            content
+          }
+        }
+      }
+      ```
+    - This query has types related to each field
+    
+      ```
+      query: Query {
+        author(id: "abc"): Author {
+          posts: [Post] {
+            title: String
+            content: String
+          }
+        }
+      }
+      ```
+    - The resolvers will be found in our servers to proccess the query, the execution starts at the query type and goes breadth-first. This means we run the resolver for *Query.author* first. Then, we take the result of that resolver, and pass it into its child, the resolver for *Author.posts*. At the next level, the result is a list, so in that case, the execution algorithm runs on one item at a time. At the end, the execution algorithm puts everything together into the correct shape for the result and returns that.
+    
+      ```
+      Query.author(root, { id: 'abc' }, context) -> author
+      Author.posts(author, null, context) -> posts
+      for each post in posts
+        Post.title(post, null, context) -> title
+        Post.content(post, null, context) -> content
+      ```
+    
+  - More concepts
+  
+    - **Enhancing Reusability with Fragments**: *Fragments* are a handy feature to help to improve the structure and reusability of your GraphQL code. A fragment is a collection of fields on a specific type
+    
+      Starting type
+      
+      ```
+      type User {
+        name: String!
+        age: Int!
+        email: String!
+        street: String!
+        zipcode: String!
+        city: String!
+      }
+      ```
+    
+      We could represent all the information that relates to the user’s physical address into a fragment:
+      
+      ```
+      fragment addressDetails on User {
+        name
+        street
+        zipcode
+        city
+      }
+      ```
+      
+      And then reuse it as follows
+      
+      ```
+      {
+        allUsers {
+          ... addressDetails
+        }
+      }
+      ```
+      
+      Which would be equivalent to writing the following query
+      
+      ```
+      {
+        allUsers {
+          name
+          street
+          zipcode
+          city
+        }
+      }
+      ```
