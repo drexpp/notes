@@ -55,6 +55,9 @@ We now have parameters θ that we use to learn φ (layers) from a broad class of
       
       ![](https://i.imgur.com/x0MSqjh.png)
       
+      - The graphical idea is this, simply **mind blowing** ([Must have a look, On the Number of Linear Regions of
+Deep Neural Networks, Montufar et al., 2014](https://arxiv.org/pdf/1402.1869.pdf))
       
-    
+![](https://i.imgur.com/dqcO54M.png)
+      
        
