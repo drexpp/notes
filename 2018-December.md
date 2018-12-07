@@ -60,4 +60,19 @@ Deep Neural Networks, Montufar et al., 2014](https://arxiv.org/pdf/1402.1869.pdf
       
 ![](https://i.imgur.com/dqcO54M.png)
       
-       
+### Autoencoders [Ali Ghodsi Waterloo university](https://www.youtube.com/watch?v=uaaqyVS9-rM)
+
+  - **An autoencoder learns to compress data from the input layer into a short code, and then uncompress that code into something that closely matches the original data**. This forces the autoencoder to engage in dimensionality reduction, for example by learning how to ignore noise. Some architectures use stacked sparse autoencoder layers for image recognition. The first encoding layer might learn to encode easy features like corners, the second to analyze the first layer's output and then encode less local features like the tip of a nose, the third might encode a whole nose, etc., until the final encoding layer encodes the whole image into a code that matches (for example) the concept of "cat". The decoding layers will learn to decode the learnt code representation back into its original form as close as possible.
+  
+  ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Autoencoder_structure.png/350px-Autoencoder_structure.png)
+  
+  - How to train
+    - For each input x, do a feed-forward pass to compute activations at all hidden layers, then at the output layer to obtain an output x'.
+    - Measure the deviation of x' from the input x (typically using squared error).
+    - Backpropagate the error through the net and perform weight updates.
+    
+  - More information
+  
+    - Variational AutoEncoders (VAE) Paper - [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114v10.pdf). They basically learn a distribution function with parameters (mean and variance) which you can use to sample new data. On the other hand, autoencoders learns a function to map each input to a number and decoder learns the reverse mapping.
+    
+    ![](https://qph.fs.quoracdn.net/main-qimg-62c793e38456b093cd83fd5476aed596.webp)
