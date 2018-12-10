@@ -59,6 +59,21 @@ We now have parameters θ that we use to learn φ (layers) from a broad class of
 Deep Neural Networks, Montufar et al., 2014](https://arxiv.org/pdf/1402.1869.pdf))
       
 ![](https://i.imgur.com/dqcO54M.png)
+
+  - **Gradient-Based Learning**
+    
+    - **(Note)** The largest diﬀerence between the linear models we have seen so far and neuralnetworks is that the nonlinearity of a neural network causes most interesting lossfunctions to become nonconvex. For feedforward neural networks, it is important to initialize all weights to small random values. The biases may be initialized to zero or to small positive values.
+    - Cost Functions
+      
+      In most cases, our parametric model deﬁnes a distribution *p(y | x;θ)* and we simply use the principle of maximum likelihood. This means we use the cross-entropy between the training data and the model’s predictions as the cost function, it is normally followed by a regularization term to avoid over-fitting.
+      
+      - Learning Conditional Distributions with Maximum Likelihood
+        
+        Most modern neural networks are trained using maximum likelihood, the cost function is simply the negative log-likelihood, equivalently described as the **[cross-entropy](https://en.wikipedia.org/wiki/Cross_entropy) between the training data and the model distribution**
+        
+        ![](https://i.imgur.com/FI7DpsV.png)
+        
+        
       
 ### Autoencoders [Ali Ghodsi Waterloo university](https://www.youtube.com/watch?v=uaaqyVS9-rM)
 
@@ -76,3 +91,5 @@ Deep Neural Networks, Montufar et al., 2014](https://arxiv.org/pdf/1402.1869.pdf
     - Variational AutoEncoders (VAE) Paper - [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114v10.pdf). They basically learn a distribution function with parameters (mean and variance) which you can use to sample new data. On the other hand, autoencoders learns a function to map each input to a number and decoder learns the reverse mapping.
     
     ![](https://qph.fs.quoracdn.net/main-qimg-62c793e38456b093cd83fd5476aed596.webp)
+    
+    
