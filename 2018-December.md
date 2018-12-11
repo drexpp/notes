@@ -92,4 +92,8 @@ Deep Neural Networks, Montufar et al., 2014](https://arxiv.org/pdf/1402.1869.pdf
     
     ![](https://qph.fs.quoracdn.net/main-qimg-62c793e38456b093cd83fd5476aed596.webp)
     
+    - Two popular generative models for image data are the Variational Autoencoder (VAE, Kingma & Welling, 2014) and the Generative Adversarial Network (GAN, Goodfellow et al., 2014). VAEs use the framework of probabilistic graphical models with an objective of maximizing a lower bound on the likelihood of the data. GANs instead formalize the training process as a competition between a generative network and a separate discriminative network. Though these two frameworks are very different, both construct high dimensional latent spaces that can be sampled to generate images resembling training set data. Moreover, these latent spaces are generally highly structured and can enable complex operations on the generated images. [Source - Sampling generative networks (Tom White)](https://arxiv.org/pdf/1609.04468.pdf)
+    
+    
+    
     
