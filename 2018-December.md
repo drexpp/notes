@@ -1,8 +1,9 @@
 December 2018
 ==========
 
-Tech
+Machine learning
 ----
+
 
 ### Adversarial examples [Ian Goodfellow lecture](https://www.youtube.com/watch?v=CIfsB_EYsVI)
 
@@ -120,5 +121,11 @@ Deep Neural Networks, Montufar et al., 2014](https://arxiv.org/pdf/1402.1869.pdf
     - Two popular generative models for image data are the Variational Autoencoder (VAE, Kingma & Welling, 2014) and the Generative Adversarial Network (GAN, Goodfellow et al., 2014). VAEs use the framework of probabilistic graphical models with an objective of maximizing a lower bound on the likelihood of the data. GANs instead formalize the training process as a competition between a generative network and a separate discriminative network. Though these two frameworks are very different, both construct high dimensional latent spaces that can be sampled to generate images resembling training set data. Moreover, these latent spaces are generally highly structured and can enable complex operations on the generated images. [Source - Sampling generative networks (Tom White)](https://arxiv.org/pdf/1609.04468.pdf)
     
     
-    
-    
+
+### Numpy
+
+  - The term broadcasting is graphically explained in the next pictures, the idea is that if you have to sum two tensors of different dimension, you have to _extend_ or _broadcast_ the lower dimension tensor in order to make it in a viable way for the sumation.
+  
+  ![](https://i.stack.imgur.com/JcKv1.png)
+  
+  
