@@ -69,9 +69,34 @@ Deep Neural Networks, Montufar et al., 2014](https://arxiv.org/pdf/1402.1869.pdf
       
       - Learning Conditional Distributions with Maximum Likelihood
         
-        Most modern neural networks are trained using maximum likelihood, the cost function is simply the negative log-likelihood, equivalently described as the **[cross-entropy](https://en.wikipedia.org/wiki/Cross_entropy) between the training data and the model distribution**
+        Most modern neural networks are trained using maximum likelihood, the cost function (**Loss function is same**) is simply the negative log-likelihood, equivalently described as the **[cross-entropy](https://en.wikipedia.org/wiki/Cross_entropy) between the training data and the model distribution**
         
         ![](https://i.imgur.com/FI7DpsV.png)
+        
+        Cross-entropy loss increases as the predicted probability diverges from the actual label. So predicting a probability of .012 when the actual observation label is 1 would be bad and result in a high loss value. 
+        
+        As the predicted probability approaches to 1, the log loss decreases.
+        
+        ![](https://ml-cheatsheet.readthedocs.io/en/latest/_images/cross_entropy.png)
+        
+        As described above, cross entropy is usually used for probablistic output.
+        
+        Mean squared error is usually used for regression.
+        
+        **Using mean squared error and the softmax(sigmoid) functions together is not recommended, since this may lead to very slow learning.**
+        
+        For binary classification the code can be implemented as
+          ```
+          def CrossEntropy(yHat, y):
+            if y == 1:
+              return -log(yHat)
+            else:
+              return -log(1 - yHat)
+          ```
+        
+        In this example the error would be equal to _log(0.9) = 0.0457_ which is a tiny error, if we made a wrong prediction our cost function would be higher _log(0.1) = 1_
+        
+          ![](https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist/img/1d8fc59e6a674f1c.png)
         
         
       
