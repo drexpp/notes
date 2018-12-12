@@ -428,14 +428,16 @@ except that every element of an array must be of the same type
         ```
         
       - Filling array with values
-      	```
+       
+	```
 	a = np.array([1, 2, 3], float)
 	
 	a.fill(0)				converts a into array([0., 0., 0.])
 	```
 
       - Transpose, it will create a new array with the axis switched
-      	```
+      	
+	```
 	a = np.array(range(6), float).reshape((2, 3))		returns array([[ 0., 1., 2.], [ 3., 4., 5.]])
 	
 	a.transpose()						returns array([[ 0., 3.], [ 1., 4.], [ 2., 5.]])
